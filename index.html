@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">FINeMAN</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#budget">Budget</a></li>
+                <li><a href="#transactions">Transactions</a></li>
+                <li><a href="#reports">Reports</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Page -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to FINeMAN</h1>
+            <p>Your personal finance companion for managing money wisely.</p>
+            <button onclick="scrollToSection('budget')">Get Started</button>
+        </div>
+    </section>
+
+    <!-- Budget Page -->
+    <section id="budget" class="budget">
+        <h2>Budget Management</h2>
+        <form id="budget-form">
+            <div class="form-group">
+                <label for="category">Category:</label>
+                <input type="text" id="category" required>
+            </div>
+            <div class="form-group">
+                <label for="limit">Limit:</label>
+                <input type="number" id="limit" required>
+            </div>
+            <button type="submit">Add Budget</button>
+        </form>
+        <div class="budget-status">
+            <!-- Budget status will be dynamically inserted here -->
+        </div>
+    </section>
+
+    <!-- Transactions Page -->
+    <section id="transactions" class="transactions">
+        <h2>Manage Transactions</h2>
+        <form id="transaction-form">
+            <div class="form-group">
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" required>
+            </div>
+            <div class="form-group">
+                <label for="category">Category:</label>
+                <input type="text" id="transaction-category" required>
+            </div>
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" id="date" required>
+            </div>
+            <button type="submit">Add Transaction</button>
+        </form>
+        <div class="transactions-table-container">
+            <table id="transactions-table">
+                <thead>
+                    <tr>
+                        <th>Amount</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Transaction rows will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Reports Page -->
+    <section id="reports" class="reports">
+        <h2>Financial Reports</h2>
+        <div class="charts">
+            <div class="chart-container">
+                <canvas id="budgetChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="spendingChart"></canvas>
+            </div>
+        </div>
+        <div class="summary">
+            <!-- Summary content will be dynamically inserted here -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Contact us at <a href="mailto:support@finmanager.com">support@finmanager.com</a></p>
+        <p>Follow us on <a href="#">Social Media</a></p>
+        <p><a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
